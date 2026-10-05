@@ -78,7 +78,7 @@
       "updated": "2026-10-05"
     },
     {
-      "body": "Two arms, as designed. Standard humanoid rig, cheap to animate. No hidden limb gimmicks - keep it simple. Hands are OPEN, not fists (design correction 2026-10-05).",
+      "body": "Two arms, as designed. Standard humanoid rig, cheap to animate. No hidden limb gimmicks - keep it simple. Hands are OPEN, not fists (design correction 2026-10-05).\n\nKit pivot 2026-10-05: BRAWLER, not swordsman. No katana. Fights with punches and kicks; throws fireballs from the chest core. Legendary finisher: cuts the enemy demon in half (method open).",
       "category": "demons",
       "data": {
         "assets": {
@@ -139,7 +139,7 @@
       },
       "id": "demon-samurai",
       "status": "decided",
-      "title": "Samurai demon",
+      "title": "Samurai demon (brawler)",
       "updated": "2026-10-05"
     },
     {
@@ -156,7 +156,7 @@
       "updated": "2026-10-05"
     },
     {
-      "body": "- Boss body: 30K tris\n- Katana: 4K tris each — 2 in base form, 4 in ultimate\n- Per demon armed: ~38K tris; both demons: ~76K tris (under 15% of a mid-range mobile frame budget (~750K-1M tris/frame))\n- Weapons are separate assets parented to hand sockets; chest crystal separate for health/ult pulsing\n- Draw calls (materials per model) matter more than polygons; transparency overdraw is the silent killer",
+      "body": "- Boss body: 30K tris (samurai demon carries no weapon - brawler kit)\n- Per demon: ~30K tris; both demons: ~60K tris (well under 15% of a mid-range mobile frame budget (~750K-1M tris/frame))\n- Chest crystal separate for health/ult pulsing and as fireball origin\n- Draw calls (materials per model) matter more than polygons; transparency overdraw is the silent killer\n- Player Style weapons (dual katana) need their own budget - open",
       "category": "demons",
       "id": "asset-budgets",
       "status": "decided",
