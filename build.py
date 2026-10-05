@@ -10,9 +10,19 @@ No dependencies.
 """
 import json
 import html
+import sys
+import urllib.request
 from pathlib import Path
 
 HERE = Path(__file__).parent
+REPO_RAW = "https://raw.githubusercontent.com/Torres0990/devildriver-bible/main/devildriver.json"
+
+if "--sync" in sys.argv[1:]:
+    print("syncing devildriver.json from GitHub...")
+    with urllib.request.urlopen(REPO_RAW, timeout=60) as resp:
+        (HERE / "devildriver.json").write_bytes(resp.read())
+    print("synced.")
+
 DATA = json.loads((HERE / "devildriver.json").read_text())
 CATS = DATA["categories"]
 NOTES = DATA["notes"]
