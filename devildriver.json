@@ -1,1 +1,303 @@
-{"categories":[{"description":"The game, its pillars, and how a match flows.","id":"overview","page":"index.html","title":"Overview"},{"description":"The two team demons: look, kit, and asset budgets.","id":"demons","page":"demons.html","title":"Demons"},{"description":"The three stacked zones of the arena.","id":"arena","page":"arena.html","title":"Arena"},{"description":"Player model, souls, and comeback systems.","id":"mechanics","page":"mechanics.html","title":"Mechanics"},{"description":"Fixed kits. One note per Style — add new Styles as new notes.","id":"styles","page":"styles.html","title":"Styles"},{"description":"3D asset pipeline and target engine status.","id":"pipeline","page":"pipeline.html","title":"3D Pipeline"}],"meta":{"edit_contract":"AI CONTRIBUTORS READ THIS: the shared source of truth is the GitHub repo Torres0990/devildriver-bible (public) — read devildriver.json there, not a cached copy. The unit of change is a NOTE. To ADD knowledge (a new Style, a new mechanic, a new zone): append an object to notes with a unique kebab-case id, a category from the categories list (or add a new category object — build.py generates its page automatically), status locked|decided|open, and an updated date. To EDIT: modify the note in place and bump updated. NEVER change the meaning of a locked note without Sebastian's explicit approval — locked means he confirmed it final. Style kits live in category styles, one note per Style, using the style-kit schema in the style-system note. Bodies use plain text: blank line = new paragraph, lines starting with '- ' = bullets. If you have repo write access, commit directly; otherwise hand the new/edited note JSON to Sebastian and he will route it. After editing: python3 build.py, then python3 deploy.py.","how_to_use":"Notes are the unit of knowledge. AI consumers: read the edit_contract above before adding or changing anything; read prompting note for prompt composition. Humans: the HTML pages render the same notes readably.","maintainer":"David (Muse) for Sebastian","name":"DevilDriver Design Bible (notes)","status_convention":"locked = Sebastian confirmed, final. decided = current direction, can revisit. open = undecided, Sebastian decides.","updated":"2026-10-05","version":"2.0"},"notes":[{"body":"Each team owns an enormous demon. The demons duel each other in the central city while the players skirmish around them — fighting enemy players, attacking the enemy demon, and gathering souls to buff their own demon. An unbuffed duel always ends in mutual destruction; souls are the tiebreaker that lets one demon live.","category":"overview","id":"game-pitch","status":"locked","title":"Pitch","updated":"2026-10-05"},{"body":"- Demons are the match clock — everything orbits their duel\n- Souls are the only progression inside a match\n- No builds, no loadouts — a Style is a complete fixed kit\n- Big health pools — nobody gets deleted instantly\n- Verticality everywhere — wall-running, climbing, three stacked zones","category":"overview","id":"design-pillars","status":"locked","title":"Design pillars","updated":"2026-10-05"},{"body":"1. Skirmish — teams fight over positioning and the first souls while the demons open their duel.\n2. Demon duel — the demons fight in the main city, driven toward mutual kill unless soul buffs tip it.\n3. Demon fall — one demon dies. Its team permanently loses respawns.\n4. The hunt — the surviving demon hunts the remaining enemy players alongside its team. Match ends on team wipe.\n\nWin condition: wipe the enemy team after their demon falls.\nRespawns: while your demon stands, dead teammates respawn after a delay (delay length: open). When your demon falls, no more respawns.","category":"overview","id":"match-flow","status":"locked","title":"Match flow","updated":"2026-10-05"},{"body":"Two arms during normal combat (standard rig, cheap to animate). The second pair manifests ONLY for the ultimate — the manifestation IS the telegraph.","category":"demons","data":{"assets":{"body_budget_tris":30000,"both_demons_tris":76000,"frame_budget_note":"Under 15% of a Quest-class frame budget (~500K-1M tris)","hidden_ult_arms":"Reserve ~2K tris inside the 30K body budget for the hidden ultimate arm pair","katana_budget_tris_each":4000,"katana_count_base_form":2,"katana_count_ultimate":4,"per_demon_armed_tris":38000},"crystal":{"note":"Separate small asset so it can pulse with demon health / ult timer","separate":true},"image_prompt":"Legendary demon samurai, tall upright humanoid, faceless smooth black void head with large horns, cosmic black armor with blood-red glow accents and gold trim, spiked layered shoulder pauldrons proportioned to body, glowing red crystal centered on chest, two arms with hands in curled grip pose, standing straight, game character concept art, bold clean shapes, front view, neutral background","kit":{"attacks":"Slash sequences that hit the dragon, players, structures, and riders within a radius.","special_abilities":true,"telegraphs_and_counters":true,"timed_ultimate":{"description":"Second arm pair manifests from the torso; four katanas, full slash storm. The manifestation IS the telegraph.","name":"Slash storm","status":"decided"}},"palette":["cosmic black armor","blood-red blades and glow","gold trim and spike tips","white skull pommel on katanas"],"pipeline":{"export_target":"Horizon Studio (NOT Xogot/Godot — Sebastian corrected this 2026-10-04)","mesh_current":"31,506 quad faces (~63K tris), textured, rigged","service":"Tripo (studio.tripo3d.ai)","steps_done":["image-to-3D mesh from approved design sheet","texture pass","auto-rig (clean skeleton placement)"],"steps_next":["decimate 63K to 30K tris","export GLB","import into Horizon Studio"]},"role":"Pure damage","team":"Team A","visual_identity":"Legendary demon samurai","visual_not":"Not a copy of the MLBB purple sea Thamuz skin that inspired it — changed enough to be its own design. No wings, no hanging banners, no digitigrade legs, no cracks/lava, no slime gloss.","weapons":{"attachment":"Katanas parented to hand sockets; hands modeled in curled grip pose (C-shape)","katana_image_prompt":"Katana game weapon asset, orthographic side view, flat lighting: blood-red blade, black handle with red diamond wrap, ornate gold guard, small white skull pommel. Clean stylized 3D, neutral gray background.","separate":true}},"id":"demon-samurai","status":"decided","title":"Samurai demon","updated":"2026-10-05"},{"body":"Serious, threatening, unmistakably airborne flying leviathan. Celeste / light-blue body with white-cyan glow accents. Buildings float weightlessly around it so gravity control reads instantly in the silhouette. Not cute, not cartoonish — must read as a rival boss to the samurai.\n\nKit: manipulates gravity around BUILDINGS only — never directly on players (fairness rule, locked). Makes structures float or ignore gravity temporarily; terrain changes are neutral opportunities for both teams. Asymmetric kit, equal match effectiveness vs the samurai — no soul advantage means the duel still ties. Special abilities, timed ultimate, anti-rider responses, telegraphs and counters.","category":"demons","data":{"image_prompt":"Serious threatening celeste light-blue flying dragon leviathan, enormous wings, buildings floating weightlessly around it showing gravity manipulation, glowing white-cyan accents, game boss concept art, bold clean shapes, dramatic but readable silhouette","role":"Terrain control","team":"Team B"},"id":"demon-leviathan","status":"decided","title":"Gravity leviathan","updated":"2026-10-05"},{"body":"- Boss body: 30K tris (hidden ult arm pair reserved inside)\n- Katana: 4K tris each — 2 in base form, 4 in ultimate\n- Per demon armed: ~38K tris; both demons: ~76K tris (under 15% of a Quest-class frame budget)\n- Weapons are separate assets parented to hand sockets; chest crystal separate for health/ult pulsing\n- Draw calls (materials per model) matter more than polygons; transparency overdraw is the silent killer","category":"demons","id":"asset-budgets","status":"decided","title":"Asset budgets","updated":"2026-10-05"},{"body":"One vertically layered arena, three zones. Streaming-friendly: side zones stay unloaded until players travel.","category":"arena","id":"arena-concept","status":"locked","title":"Arena concept","updated":"2026-10-05"},{"body":"Large moving, floating, and destructible buildings. The demon duel happens here.","category":"arena","id":"zone-main-city","status":"locked","title":"Main city","updated":"2026-10-05"},{"body":"Reached by crossing floating rocks. Can host a soul spawn.","category":"arena","id":"zone-floating-city","status":"locked","title":"Floating city","updated":"2026-10-05"},{"body":"Entered through a hole; exit holes launch players back into the air.","category":"arena","id":"zone-underground-city","status":"locked","title":"Underground city","updated":"2026-10-05"},{"body":"No character selection, no weapon mixing, no skill trees, no builds. A Style is a complete fixed kit: manifested equipment, attacks, defense, movement, abilities. Start with one Style; later additions are complete new Styles.","category":"mechanics","id":"player-model","status":"locked","title":"Player model: Style","updated":"2026-10-05"},{"body":"- Strong parry\n- Wall-running and heavy vertical movement\n- Demon climbing — players can climb demons and attack body regions\n- Structure damage only via specific Style abilities, never basic attacks\n- Large health pools — no instant deletions","category":"mechanics","id":"core-mechanics","status":"locked","title":"Core mechanics","updated":"2026-10-05"},{"body":"Tiebreaker for the demon duel. Feeding souls to your demon is the only way it survives the mutual-kill outcome.\n\nCadence: one soul every 90 seconds. No bank or deposit system.\n\nOpen: sequential limited souls vs unlimited recurring spawns vs one rotating active soul; delivery method; whether souls drop on player death; buff magnitude per soul; spawn location rotation.","category":"mechanics","id":"souls","status":"decided","title":"Souls","updated":"2026-10-05"},{"body":"- One for all (outnumbered): buff activates when one player fights two or more enemies with teammates absent.\n- Last person standing: temporary comeback window for the final player — activates only after they have taken enough damage. Not instant, not permanent, not a second life.\n\nNumbers, cooldowns, visuals, and interaction with demon death: open.","category":"mechanics","id":"comeback-systems","status":"decided","title":"Comeback systems","updated":"2026-10-05"},{"body":"A Style is a complete fixed kit — picking it is the entire pre-match decision. Schema for a Style note:\n\n- name: the Style's name\n- fantasy: one-line combat fantasy (e.g. 'untouchable duelist who turns defense into offense')\n- equipment: manifested gear (weapons are part of the kit, not separate picks)\n- attacks: basic attack behavior\n- defense: parry/block/dodge identity within the strong-parry system\n- movement: how it wall-runs, climbs, repositions — what makes its traversal distinct\n- abilities: named abilities, including which one damages structures\n- vs-demons: how this Style fights or supports around the demons\n- status: open until Sebastian locks it","category":"styles","id":"style-system","status":"locked","title":"Style system + style-kit schema","updated":"2026-10-05"},{"body":"The first Style is undefined. When Sebastian (or a contributing AI) designs it, add it as a new note in this category following the style-kit schema — do not fill this placeholder in.","category":"styles","id":"style-first-tbd","status":"open","title":"First Style (to be designed)","updated":"2026-10-05"},{"body":"Service: Tripo (studio.tripo3d.ai). Samurai: image-to-3D mesh from the approved design sheet → 31,506 quad faces (~63K tris) → texture pass → auto-rig with clean skeleton placement.\n\nNext: decimate 63K to 30K tris, export GLB, import into Horizon Studio.","category":"pipeline","id":"tripo-pipeline","status":"decided","title":"Tripo 3D pipeline","updated":"2026-10-05"},{"body":"Target: Meta Horizon Studio. In gradual early access / waitlist as of 2026-10-05; Sebastian joined the creator program. Weekly launch watch runs Mondays.\n\nConfirmed: camera APIs + Monster Hunter-style camera example, custom model import, FBX animation import, AI mesh/texture generation (AssetGen 2.0, animatable characters announced).\n\nUnverified: action-combat netcode reliability, tick rate, melee lag compensation, destruction quality, climbing + animation workflow, physics quality, real-device combat feel, AI character generation output ceiling.\n\nPrincipal risks: destruction, climbing, animation workflow, physics quality, real-device combat feel. No confirmed standalone export — platform-locked.","category":"pipeline","id":"engine-status","status":"decided","title":"Horizon Studio status","updated":"2026-10-05"},{"body":"Compose prompts FROM the structured fields in the notes — never from memory or imagination.\n\nImage prompt recipe: visual_identity + silhouette + palette (as material colors) + distinct features + visual_not (as negative prompt) + 'game character concept art, bold clean shapes, front view, neutral background'.\n\nDesign prompt recipe: role + kit attacks/mechanics + match-flow context. Never lock open questions in a prompt — check the open list first.","category":"overview","id":"prompting","status":"decided","title":"Prompting doctrine","updated":"2026-10-05"}]}
+{
+  "categories": [
+    {
+      "description": "The game, its pillars, and how a match flows.",
+      "id": "overview",
+      "page": "index.html",
+      "title": "Overview"
+    },
+    {
+      "description": "The two team demons: look, kit, and asset budgets.",
+      "id": "demons",
+      "page": "demons.html",
+      "title": "Demons"
+    },
+    {
+      "description": "The three stacked zones of the arena.",
+      "id": "arena",
+      "page": "arena.html",
+      "title": "Arena"
+    },
+    {
+      "description": "Player model, souls, and comeback systems.",
+      "id": "mechanics",
+      "page": "mechanics.html",
+      "title": "Mechanics"
+    },
+    {
+      "description": "Fixed kits. One note per Style — add new Styles as new notes.",
+      "id": "styles",
+      "page": "styles.html",
+      "title": "Styles"
+    },
+    {
+      "description": "3D asset pipeline and target engine status.",
+      "id": "pipeline",
+      "page": "pipeline.html",
+      "title": "3D Pipeline"
+    },
+    {
+      "id": "economy",
+      "title": "Economy",
+      "description": "Monetization model, Style unlocks, and currency sinks.",
+      "page": "economy.html"
+    }
+  ],
+  "meta": {
+    "edit_contract": "AI CONTRIBUTORS READ THIS: the shared source of truth is the GitHub repo Torres0990/devildriver-bible (public) — read devildriver.json there, not a cached copy. The unit of change is a NOTE. To ADD knowledge (a new Style, a new mechanic, a new zone): append an object to notes with a unique kebab-case id, a category from the categories list (or add a new category object — build.py generates its page automatically), status locked|decided|open, and an updated date. To EDIT: modify the note in place and bump updated. NEVER change the meaning of a locked note without Sebastian's explicit approval — locked means he confirmed it final. Style kits live in category styles, one note per Style, using the style-kit schema in the style-system note. Bodies use plain text: blank line = new paragraph, lines starting with '- ' = bullets. If you have repo write access, commit directly; otherwise hand the new/edited note JSON to Sebastian and he will route it. After editing: python3 build.py, then python3 deploy.py.",
+    "how_to_use": "Notes are the unit of knowledge. AI consumers: read the edit_contract above before adding or changing anything; read prompting note for prompt composition. Humans: the HTML pages render the same notes readably.",
+    "maintainer": "David (Muse) for Sebastian",
+    "name": "DevilDriver Design Bible (notes)",
+    "status_convention": "locked = Sebastian confirmed, final. decided = current direction, can revisit. open = undecided, Sebastian decides.",
+    "updated": "2026-10-05",
+    "version": "2.0"
+  },
+  "notes": [
+    {
+      "body": "Each team owns an enormous demon. The demons duel each other in the central city while the players skirmish around them — fighting enemy players, attacking the enemy demon, and gathering souls to buff their own demon. An unbuffed duel always ends in mutual destruction; souls are the tiebreaker that lets one demon live.",
+      "category": "overview",
+      "id": "game-pitch",
+      "status": "locked",
+      "title": "Pitch",
+      "updated": "2026-10-05"
+    },
+    {
+      "body": "- Demons are the match clock — everything orbits their duel\n- Souls are the only progression inside a match\n- No builds, no loadouts — a Style is a complete fixed kit\n- Big health pools — nobody gets deleted instantly\n- Verticality everywhere — wall-running, climbing, three stacked zones",
+      "category": "overview",
+      "id": "design-pillars",
+      "status": "locked",
+      "title": "Design pillars",
+      "updated": "2026-10-05"
+    },
+    {
+      "body": "1. Skirmish — teams fight over positioning and the first souls while the demons open their duel.\n2. Demon duel — the demons fight in the main city, driven toward mutual kill unless soul buffs tip it.\n3. Demon fall — one demon dies. Its team permanently loses respawns.\n4. The hunt — the surviving demon hunts the remaining enemy players alongside its team. Match ends on team wipe.\n\nWin condition: wipe the enemy team after their demon falls.\nRespawns: while your demon stands, dead teammates respawn after a delay (delay length: open). When your demon falls, no more respawns.",
+      "category": "overview",
+      "id": "match-flow",
+      "status": "locked",
+      "title": "Match flow",
+      "updated": "2026-10-05"
+    },
+    {
+      "body": "Two arms during normal combat (standard rig, cheap to animate). The second pair manifests ONLY for the ultimate — the manifestation IS the telegraph.",
+      "category": "demons",
+      "data": {
+        "assets": {
+          "body_budget_tris": 30000,
+          "both_demons_tris": 76000,
+          "frame_budget_note": "Under 15% of a Quest-class frame budget (~500K-1M tris)",
+          "hidden_ult_arms": "Reserve ~2K tris inside the 30K body budget for the hidden ultimate arm pair",
+          "katana_budget_tris_each": 4000,
+          "katana_count_base_form": 2,
+          "katana_count_ultimate": 4,
+          "per_demon_armed_tris": 38000
+        },
+        "crystal": {
+          "note": "Separate small asset so it can pulse with demon health / ult timer",
+          "separate": true
+        },
+        "image_prompt": "Legendary demon samurai, tall upright humanoid, faceless smooth black void head with large horns, cosmic black armor with blood-red glow accents and gold trim, spiked layered shoulder pauldrons proportioned to body, glowing red crystal centered on chest, two arms with hands in curled grip pose, standing straight, game character concept art, bold clean shapes, front view, neutral background",
+        "kit": {
+          "attacks": "Slash sequences that hit the dragon, players, structures, and riders within a radius.",
+          "special_abilities": true,
+          "telegraphs_and_counters": true,
+          "timed_ultimate": {
+            "description": "Second arm pair manifests from the torso; four katanas, full slash storm. The manifestation IS the telegraph.",
+            "name": "Slash storm",
+            "status": "decided"
+          }
+        },
+        "palette": [
+          "cosmic black armor",
+          "blood-red blades and glow",
+          "gold trim and spike tips",
+          "white skull pommel on katanas"
+        ],
+        "pipeline": {
+          "export_target": "Horizon Studio (NOT Xogot/Godot — Sebastian corrected this 2026-10-04)",
+          "mesh_current": "31,506 quad faces (~63K tris), textured, rigged",
+          "service": "Tripo (studio.tripo3d.ai)",
+          "steps_done": [
+            "image-to-3D mesh from approved design sheet",
+            "texture pass",
+            "auto-rig (clean skeleton placement)"
+          ],
+          "steps_next": [
+            "decimate 63K to 30K tris",
+            "export GLB",
+            "import into Horizon Studio"
+          ]
+        },
+        "role": "Pure damage",
+        "team": "Team A",
+        "visual_identity": "Legendary demon samurai",
+        "visual_not": "Not a copy of the MLBB purple sea Thamuz skin that inspired it — changed enough to be its own design. No wings, no hanging banners, no digitigrade legs, no cracks/lava, no slime gloss.",
+        "weapons": {
+          "attachment": "Katanas parented to hand sockets; hands modeled in curled grip pose (C-shape)",
+          "katana_image_prompt": "Katana game weapon asset, orthographic side view, flat lighting: blood-red blade, black handle with red diamond wrap, ornate gold guard, small white skull pommel. Clean stylized 3D, neutral gray background.",
+          "separate": true
+        }
+      },
+      "id": "demon-samurai",
+      "status": "decided",
+      "title": "Samurai demon",
+      "updated": "2026-10-05"
+    },
+    {
+      "body": "Serious, threatening, unmistakably airborne flying leviathan. Celeste / light-blue body with white-cyan glow accents. Buildings float weightlessly around it so gravity control reads instantly in the silhouette. Not cute, not cartoonish — must read as a rival boss to the samurai.\n\nKit: manipulates gravity around BUILDINGS only — never directly on players (fairness rule, locked). Makes structures float or ignore gravity temporarily; terrain changes are neutral opportunities for both teams. Asymmetric kit, equal match effectiveness vs the samurai — no soul advantage means the duel still ties. Special abilities, timed ultimate, anti-rider responses, telegraphs and counters.",
+      "category": "demons",
+      "data": {
+        "image_prompt": "Serious threatening celeste light-blue flying dragon leviathan, enormous wings, buildings floating weightlessly around it showing gravity manipulation, glowing white-cyan accents, game boss concept art, bold clean shapes, dramatic but readable silhouette",
+        "role": "Terrain control",
+        "team": "Team B"
+      },
+      "id": "demon-leviathan",
+      "status": "decided",
+      "title": "Gravity leviathan",
+      "updated": "2026-10-05"
+    },
+    {
+      "body": "- Boss body: 30K tris (hidden ult arm pair reserved inside)\n- Katana: 4K tris each — 2 in base form, 4 in ultimate\n- Per demon armed: ~38K tris; both demons: ~76K tris (under 15% of a Quest-class frame budget)\n- Weapons are separate assets parented to hand sockets; chest crystal separate for health/ult pulsing\n- Draw calls (materials per model) matter more than polygons; transparency overdraw is the silent killer",
+      "category": "demons",
+      "id": "asset-budgets",
+      "status": "decided",
+      "title": "Asset budgets",
+      "updated": "2026-10-05"
+    },
+    {
+      "body": "One vertically layered arena, three zones. Streaming-friendly: side zones stay unloaded until players travel.",
+      "category": "arena",
+      "id": "arena-concept",
+      "status": "locked",
+      "title": "Arena concept",
+      "updated": "2026-10-05"
+    },
+    {
+      "body": "Large moving, floating, and destructible buildings. The demon duel happens here.",
+      "category": "arena",
+      "id": "zone-main-city",
+      "status": "locked",
+      "title": "Main city",
+      "updated": "2026-10-05"
+    },
+    {
+      "body": "Reached by crossing floating rocks. Can host a soul spawn.",
+      "category": "arena",
+      "id": "zone-floating-city",
+      "status": "locked",
+      "title": "Floating city",
+      "updated": "2026-10-05"
+    },
+    {
+      "body": "Entered through a hole; exit holes launch players back into the air.",
+      "category": "arena",
+      "id": "zone-underground-city",
+      "status": "locked",
+      "title": "Underground city",
+      "updated": "2026-10-05"
+    },
+    {
+      "body": "No character selection, no weapon mixing, no skill trees, no builds. A Style is a complete fixed kit: manifested equipment, attacks, defense, movement, abilities. Start with one Style; later additions are complete new Styles.",
+      "category": "mechanics",
+      "id": "player-model",
+      "status": "locked",
+      "title": "Player model: Style",
+      "updated": "2026-10-05"
+    },
+    {
+      "body": "- Strong parry\n- Wall-running and heavy vertical movement\n- Demon climbing — players can climb demons and attack body regions\n- Structure damage only via specific Style abilities, never basic attacks\n- Large health pools — no instant deletions",
+      "category": "mechanics",
+      "id": "core-mechanics",
+      "status": "locked",
+      "title": "Core mechanics",
+      "updated": "2026-10-05"
+    },
+    {
+      "body": "Tiebreaker for the demon duel. Feeding souls to your demon is the only way it survives the mutual-kill outcome.\n\nCadence: one soul every 90 seconds. No bank or deposit system.\n\nOpen: sequential limited souls vs unlimited recurring spawns vs one rotating active soul; delivery method; whether souls drop on player death; buff magnitude per soul; spawn location rotation.",
+      "category": "mechanics",
+      "id": "souls",
+      "status": "decided",
+      "title": "Souls",
+      "updated": "2026-10-05"
+    },
+    {
+      "body": "- One for all (outnumbered): buff activates when one player fights two or more enemies with teammates absent.\n- Last person standing: temporary comeback window for the final player — activates only after they have taken enough damage. Not instant, not permanent, not a second life.\n\nNumbers, cooldowns, visuals, and interaction with demon death: open.",
+      "category": "mechanics",
+      "id": "comeback-systems",
+      "status": "decided",
+      "title": "Comeback systems",
+      "updated": "2026-10-05"
+    },
+    {
+      "body": "A Style is a complete fixed kit — picking it is the entire pre-match decision. Schema for a Style note:\n\n- name: the Style's name\n- fantasy: one-line combat fantasy (e.g. 'untouchable duelist who turns defense into offense')\n- equipment: manifested gear (weapons are part of the kit, not separate picks)\n- attacks: basic attack behavior\n- defense: parry/block/dodge identity within the strong-parry system\n- movement: how it wall-runs, climbs, repositions — what makes its traversal distinct\n- abilities: named abilities, including which one damages structures\n- vs-demons: how this Style fights or supports around the demons\n- status: open until Sebastian locks it",
+      "category": "styles",
+      "id": "style-system",
+      "status": "locked",
+      "title": "Style system + style-kit schema",
+      "updated": "2026-10-05"
+    },
+    {
+      "body": "Service: Tripo (studio.tripo3d.ai). Samurai: image-to-3D mesh from the approved design sheet → 31,506 quad faces (~63K tris) → texture pass → auto-rig with clean skeleton placement.\n\nNext: decimate 63K to 30K tris, export GLB, import into Horizon Studio.",
+      "category": "pipeline",
+      "id": "tripo-pipeline",
+      "status": "decided",
+      "title": "Tripo 3D pipeline",
+      "updated": "2026-10-05"
+    },
+    {
+      "body": "Target: Meta Horizon Studio. In gradual early access / waitlist as of 2026-10-05; Sebastian joined the creator program. Weekly launch watch runs Mondays.\n\nConfirmed: camera APIs + Monster Hunter-style camera example, custom model import, FBX animation import, AI mesh/texture generation (AssetGen 2.0, animatable characters announced).\n\nUnverified: action-combat netcode reliability, tick rate, melee lag compensation, destruction quality, climbing + animation workflow, physics quality, real-device combat feel, AI character generation output ceiling.\n\nPrincipal risks: destruction, climbing, animation workflow, physics quality, real-device combat feel. No confirmed standalone export — platform-locked.",
+      "category": "pipeline",
+      "id": "engine-status",
+      "status": "decided",
+      "title": "Horizon Studio status",
+      "updated": "2026-10-05"
+    },
+    {
+      "body": "Compose prompts FROM the structured fields in the notes — never from memory or imagination.\n\nImage prompt recipe: visual_identity + silhouette + palette (as material colors) + distinct features + visual_not (as negative prompt) + 'game character concept art, bold clean shapes, front view, neutral background'.\n\nDesign prompt recipe: role + kit attacks/mechanics + match-flow context. Never lock open questions in a prompt — check the open list first.",
+      "category": "overview",
+      "id": "prompting",
+      "status": "decided",
+      "title": "Prompting doctrine",
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "player-attributes",
+      "category": "mechanics",
+      "title": "Base attributes",
+      "status": "decided",
+      "updated": "2026-10-05",
+      "body": "Base Health Pool: 2,500 HP.\n\nBase Attack Power: 100 ATK.\n\nStarting numbers for playtesting — ratios matter more than absolutes at this stage."
+    },
+    {
+      "id": "energy-pool",
+      "category": "mechanics",
+      "title": "Energy pool",
+      "status": "decided",
+      "updated": "2026-10-05",
+      "body": "Max Energy: 100 points, shared across all mobility actions.\n\n- Dodge: 30-35 points per dash — about 3 consecutive dodges before empty.\n- Sprint: ~5 points per second.\n- Full recharge: 3.0 seconds (0 to 100%).\n- Energy regenerates while walking — no forced standing idle during neutral play."
+    },
+    {
+      "id": "style-dual-katana",
+      "category": "styles",
+      "title": "Dual Katana (Fire/Void)",
+      "status": "decided",
+      "updated": "2026-10-05",
+      "body": "The starter Style — every new player picks this kit free at creation. Working title; proper name open.\n\nFantasy: untouchable duelist who shreds defense with Void, then executes with Fire.\n\nEquipment: two manifested katanas — Katana F (Fire) and Katana V (Void). Weapons are part of the kit, not separate picks.\n\nAttacks: real-time stance swapping between the two katanas. Katana V is the neutral opener — gap closing, crowd control, defense shred. Katana F is the payoff — high raw damage plus Burn DoT stacks once the target's defense is open.\n\nStance swap rules: 1.0 second rapid swap window immediately after each transition for fluid combo extensions; 7.0 second swap lockdown once the window expires — no infinite stance spam.\n\nDefense: Katana V utility plus the universal strong-parry system.\n\nMovement: energy-based dodges and sprint (see energy pool); wall-running per core mechanics.\n\nAbilities: Burn DoT — Fire strikes stack burn damage over time, constant health pressure. Defense Shred — Void strikes strip armor/resistance, applying a vulnerability debuff.\n\nVs demons: open — not yet specified how this Style fights around the demons."
+    },
+    {
+      "id": "monetization-pillars",
+      "category": "economy",
+      "title": "Monetization pillars",
+      "status": "decided",
+      "updated": "2026-10-05",
+      "body": "Core pillar: zero pay-to-win. No weapon or item bought with real currency ever grants a numerical stat advantage.\n\nCosmetics and skins are pure aesthetic — character, weapons, visual effects — with 0% stat boost."
+    },
+    {
+      "id": "style-unlocks",
+      "category": "economy",
+      "title": "Style unlocks",
+      "status": "decided",
+      "updated": "2026-10-05",
+      "body": "Every new player picks 1 base Style free at creation.\n\nAdditional Styles unlock two ways: in-game playtime/currency earned from matches and challenges, or direct premium purchase (pay-to-skip — the kit is fixed, so no stat advantage).\n\nNew Styles launch with a temporary paid Early Access window before becoming earnable in-game."
+    }
+  ]
+}
