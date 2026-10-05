@@ -30,7 +30,7 @@ V4 = "https://api.cloudflare.com/client/v4"
 
 PUBLISH = [
     "index.html", "demons.html", "arena.html", "mechanics.html",
-    "styles.html", "pipeline.html", "prompts.html",
+    "styles.html", "pipeline.html", "prompts.html", "economy.html",
     "devildriver.json", "llms.txt",
     "assets/samurai-base.webp", "assets/katana.webp",
 ]
