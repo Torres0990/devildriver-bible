@@ -156,7 +156,7 @@
       "updated": "2026-10-05"
     },
     {
-      "body": "- Boss body: 30K tris (hidden ult arm pair reserved inside)\n- Katana: 4K tris each — 2 in base form, 4 in ultimate\n- Per demon armed: ~38K tris; both demons: ~76K tris (under 15% of a Quest-class frame budget)\n- Weapons are separate assets parented to hand sockets; chest crystal separate for health/ult pulsing\n- Draw calls (materials per model) matter more than polygons; transparency overdraw is the silent killer",
+      "body": "- Boss body: 30K tris (hidden ult arm pair reserved inside)\n- Katana: 4K tris each — 2 in base form, 4 in ultimate\n- Per demon armed: ~38K tris; both demons: ~76K tris (under 15% of a phone-class frame budget)\n- Weapons are separate assets parented to hand sockets; chest crystal separate for health/ult pulsing\n- Draw calls (materials per model) matter more than polygons; transparency overdraw is the silent killer",
       "category": "demons",
       "id": "asset-budgets",
       "status": "decided",
