@@ -304,7 +304,7 @@
    "category": "mechanics",
    "title": "Base attributes",
    "status": "decided",
-   "body": "Base Health Pool: 2,500 HP. Base Attack Power: 100 ATK.\n\nStance Swap Rules:\n- Rapid Swap Window: 1.0 second immediately following a stance transition, allowing fluid combo extensions.\n- Swap Lockdown Cooldown: 7.0 seconds after the rapid swap window expires, preventing infinite stance spamming.",
+   "body": "Base values every Style is tuned against: 2,500 HP, 100 ATK.\n\nOpen question: whether HP stays flat across Styles or varies per Style - see the style-stat-variance note.",
    "updated": "2026-10-06"
   },
   {
@@ -320,7 +320,7 @@
    "category": "styles",
    "title": "Dual katana stance kit (proposed starter Style)",
    "status": "decided",
-   "body": "The primary starter weapon kit: real-time stance swapping between two elementally distinct katanas. Recorded as a Style \u2014 one fixed kit, no weapon mixing.\n\nKatana F (Fire) \u2014 Offense & Execution: high raw damage and Burn DoT stacks (non-lethal and lethal) ticking over time; the damage payoff stance once defense is opened.\n\nKatana V (Void) \u2014 Defense Shred & Utility: hits strip armor/resistance (vulnerability debuff); crowd control and gap closing; the neutral opener. Once shredded, swap to Katana F to maximize output.\n\nStance swap rules: see base-attributes note (1.0s rapid window, 7.0s lockdown).",
+   "body": "The primary starter weapon kit: real-time stance swapping between two elementally distinct katanas. Recorded as a Style \u2014 one fixed kit, no weapon mixing.\n\nKatana F (Fire) \u2014 Offense & Execution: high raw damage and Burn DoT stacks (non-lethal and lethal) ticking over time; the damage payoff stance once defense is opened.\n\nKatana V (Void) \u2014 Defense Shred & Utility: hits strip armor/resistance (vulnerability debuff); crowd control and gap closing; the neutral opener. Once shredded, swap to Katana F to maximize output.\n\nStance swap rules: see base-attributes note (1.0s rapid window, 7.0s lockdown).\n\nStance Swap Rules (kit-specific, not universal):\n- Rapid Swap Window: 1.0 second immediately following a stance transition, allowing fluid combo extensions.\n- Swap Lockdown Cooldown: 7.0 seconds after the rapid swap window expires, preventing infinite stance spamming.",
    "updated": "2026-10-06"
   },
   {
@@ -353,6 +353,14 @@
    "title": "Currency sinks",
    "status": "decided",
    "body": "- Consumable armor modules (if the module system is approved \u2014 currently open/conflicted)\n- Cosmetics: character, weapon stance, and visual effect skins",
+   "updated": "2026-10-06"
+  },
+  {
+   "id": "style-stat-variance",
+   "category": "styles",
+   "title": "Per-Style stat variance (open question)",
+   "status": "open",
+   "body": "Question from Sebastian (2026-10-06): should base health stay flat at 2,500 for all Styles, or vary per Style?\n\nRecommendation: vary it. With no builds, the Style IS the build - flat stats waste the main differentiation axis. But keep 2,500 HP / 100 ATK as the anchor and express every Style's stats as deltas with a paired cost (e.g. +500 HP means -mobility, -energy, or -offense). Rules:\n- Sidegrades only, never strict upgrades - a tankier Style must give something up.\n- Because Styles are unlockable (grind or pay), an unlocked Style must never read as pay-to-win; every delta must be visible in the kit with its tradeoff.\n- List each Style's deltas in its kit note so matchups stay readable.",
    "updated": "2026-10-06"
   }
  ]
