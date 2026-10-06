@@ -20,7 +20,13 @@ import time
 import urllib.request
 from pathlib import Path
 
-import blake3
+try:
+    import blake3
+except ModuleNotFoundError:  # VM images rotate; reinstall quietly
+    import subprocess as _sp
+    _sp.run(["pip", "install", "blake3", "--break-system-packages", "-q"],
+            check=True, capture_output=True)
+    import blake3
 
 SITE = Path.home() / "workspace/games/devildriver/site"
 SHIM = Path.home() / "workspace/skills/cloudflare/bin/cf_fetch.py"
