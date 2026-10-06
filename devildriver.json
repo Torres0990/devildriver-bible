@@ -50,7 +50,7 @@
   "name": "DevilDriver Design Bible (notes)",
   "status_convention": "locked = Sebastian confirmed, final. decided = current direction, can revisit. open = undecided, Sebastian decides.",
   "updated": "2026-10-06",
-  "version": "2.1"
+  "version": "2.2"
  },
  "notes": [
   {
@@ -361,6 +361,14 @@
    "title": "Per-Style stat variance (open question)",
    "status": "open",
    "body": "Question from Sebastian (2026-10-06): should base health stay flat at 2,500 for all Styles, or vary per Style?\n\nRecommendation: vary it. With no builds, the Style IS the build - flat stats waste the main differentiation axis. But keep 2,500 HP / 100 ATK as the anchor and express every Style's stats as deltas with a paired cost (e.g. +500 HP means -mobility, -energy, or -offense). Rules:\n- Sidegrades only, never strict upgrades - a tankier Style must give something up.\n- Because Styles are unlockable (grind or pay), an unlocked Style must never read as pay-to-win; every delta must be visible in the kit with its tradeoff.\n- List each Style's deltas in its kit note so matchups stay readable.",
+   "updated": "2026-10-06"
+  },
+  {
+   "id": "onboarding-first-session",
+   "category": "mechanics",
+   "title": "Onboarding: first-session flow",
+   "status": "decided",
+   "body": "First session: tap from feed, pick 1 free starter Style (one tap, big visuals, ~5 seconds - no menu maze), straight into a bot match. Skip-tutorial button always available.\n\nNo separate tutorial. Contextual coaching inside the bot match, triggered by situation not by timer:\n- Running near a wall: 'You are running close to a wall! Double jump to run on it!'\n- Enemy guarding: 'Enemy is guarding! Hold attack for a heavy attack!'\n- Dodge prompt tied to joystick direction: 'Press dodge, you will dodge to where your wheel is pointing.'\n\nThe bot match has two jobs: teach the hands AND sell the fantasy. Bots let the player land the cool stuff - first heavy breaks a guard, first soul buffs their demon, they watch their giant demon smash something.\n\nMindlessly easy by design: no option overload, straight to fun. Teach Styles and how to check abilities - nothing else until the player is retained.",
    "updated": "2026-10-06"
   }
  ]
