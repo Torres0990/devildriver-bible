@@ -376,7 +376,7 @@
    "category": "mechanics",
    "title": "Match intro: demon descent",
    "status": "decided",
-   "body": "No ground spawns. All players start standing on their team's demon. The demons descend into the main city together and the players wall-run down nearby buildings into the fight. This is the opening spectacle of every match.",
+   "body": "No ground spawns. All players start standing on their team's demon. The demons descend into the main city together and the players wall-run down nearby buildings into the fight. This is the opening spectacle of every match. Intro is ~10 seconds, no skip needed. Reference pose: player character standing triumphant atop the demon during descent (see assets/refs/descent-hero-pose.jpg) \u2014 this is the poster's hero shot.",
    "updated": "2026-10-07"
   },
   {
@@ -384,7 +384,7 @@
    "category": "mechanics",
    "title": "Respawns: sky drop",
    "status": "decided",
-   "body": "While your demon stands, dead teammates respawn after a delay (delay length: open). Respawns drop from the sky in a protected no-fall-damage state, landing back into the fight.",
+   "body": "While your demon stands, dead teammates respawn after a delay (delay length: open). Respawns drop from the sky in a protected no-fall-damage state, landing back into the fight. The drop is STEERABLE \u2014 players choose their landing spot, turning respawn into a small tactical decision (wall-run straight back in on landing near buildings).",
    "updated": "2026-10-07"
   }
  ]
