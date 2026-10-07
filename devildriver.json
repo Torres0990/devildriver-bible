@@ -25,7 +25,7 @@
    "title": "Mechanics"
   },
   {
-   "description": "Fixed kits. One note per Style \u2014 add new Styles as new notes.",
+   "description": "Fixed kits. One note per Style — add new Styles as new notes.",
    "id": "styles",
    "page": "styles.html",
    "title": "Styles"
@@ -44,7 +44,7 @@
   }
  ],
  "meta": {
-  "edit_contract": "AI CONTRIBUTORS READ THIS: the shared source of truth is the GitHub repo Torres0990/devildriver-bible (public) \u2014 read devildriver.json there, not a cached copy. The unit of change is a NOTE. To ADD knowledge (a new Style, a new mechanic, a new zone): append an object to notes with a unique kebab-case id, a category from the categories list (or add a new category object \u2014 build.py generates its page automatically), status locked|decided|open, and an updated date. To EDIT: modify the note in place and bump updated. NEVER change the meaning of a locked note without Sebastian's explicit approval \u2014 locked means he confirmed it final. Style kits live in category styles, one note per Style, using the style-kit schema in the style-system note. Bodies use plain text: blank line = new paragraph, lines starting with '- ' = bullets. If you have repo write access, commit directly; otherwise hand the new/edited note JSON to Sebastian and he will route it. After editing: python3 build.py, then python3 deploy.py.",
+  "edit_contract": "AI CONTRIBUTORS READ THIS: the shared source of truth is the GitHub repo Torres0990/devildriver-bible (public) — read devildriver.json there, not a cached copy. The unit of change is a NOTE. To ADD knowledge (a new Style, a new mechanic, a new zone): append an object to notes with a unique kebab-case id, a category from the categories list (or add a new category object — build.py generates its page automatically), status locked|decided|open, and an updated date. To EDIT: modify the note in place and bump updated. NEVER change the meaning of a locked note without Sebastian's explicit approval — locked means he confirmed it final. Style kits live in category styles, one note per Style, using the style-kit schema in the style-system note. Bodies use plain text: blank line = new paragraph, lines starting with '- ' = bullets. If you have repo write access, commit directly; otherwise hand the new/edited note JSON to Sebastian and he will route it. After editing: python3 build.py, then python3 deploy.py.",
   "how_to_use": "Notes are the unit of knowledge. AI consumers: read the edit_contract above before adding or changing anything; read prompting note for prompt composition. Humans: the HTML pages render the same notes readably.",
   "maintainer": "David (Muse) for Sebastian",
   "name": "DevilDriver Design Bible (notes)",
@@ -54,7 +54,7 @@
  },
  "notes": [
   {
-   "body": "Each team owns an enormous demon. The demons duel each other in the central city while the players skirmish around them \u2014 fighting enemy players, attacking the enemy demon, and gathering souls to buff their own demon. An unbuffed duel always ends in mutual destruction; souls are the tiebreaker that lets one demon live.",
+   "body": "Each team owns an enormous demon. The demons duel each other in the central city while the players skirmish around them — fighting enemy players, attacking the enemy demon, and gathering souls to buff their own demon. An unbuffed duel always ends in mutual destruction; souls are the tiebreaker that lets one demon live.",
    "category": "overview",
    "id": "game-pitch",
    "status": "locked",
@@ -62,7 +62,7 @@
    "updated": "2026-10-05"
   },
   {
-   "body": "- Demons are the match clock \u2014 everything orbits their duel\n- Souls are the only progression inside a match\n- No builds, no loadouts \u2014 a Style is a complete fixed kit\n- Big health pools \u2014 nobody gets deleted instantly\n- Verticality everywhere \u2014 wall-running, climbing, three stacked zones",
+   "body": "- Demons are the match clock — everything orbits their duel\n- Souls are the only progression inside a match\n- No builds, no loadouts — a Style is a complete fixed kit\n- Big health pools — nobody gets deleted instantly\n- Verticality everywhere — wall-running, climbing, three stacked zones",
    "category": "overview",
    "id": "design-pillars",
    "status": "locked",
@@ -70,7 +70,7 @@
    "updated": "2026-10-05"
   },
   {
-   "body": "1. Skirmish \u2014 teams fight over positioning and the first souls while the demons open their duel.\n2. Demon duel \u2014 the demons fight in the main city, driven toward mutual kill unless soul buffs tip it.\n3. Demon fall \u2014 one demon dies. Its team permanently loses respawns.\n4. The hunt \u2014 the surviving demon hunts the remaining enemy players alongside its team. Match ends on team wipe.\n\nWin condition: wipe the enemy team after their demon falls.\nRespawns: while your demon stands, dead teammates respawn after a delay (delay length: open). When your demon falls, no more respawns.",
+   "body": "1. Skirmish — teams fight over positioning and the first souls while the demons open their duel.\n2. Demon duel — the demons fight in the main city, driven toward mutual kill unless soul buffs tip it.\n3. Demon fall — one demon dies. Its team permanently loses respawns.\n4. The hunt — the surviving demon hunts the remaining enemy players alongside its team. Match ends on team wipe.\n\nWin condition: wipe the enemy team after their demon falls.\nRespawns: while your demon stands, dead teammates respawn after a delay (delay length: open). When your demon falls, no more respawns.",
    "category": "overview",
    "id": "match-flow",
    "status": "locked",
@@ -113,7 +113,7 @@
      "white skull pommel on katanas"
     ],
     "pipeline": {
-     "export_target": "Horizon Studio (NOT Xogot/Godot \u2014 Sebastian corrected this 2026-10-04)",
+     "export_target": "Horizon Studio (NOT Xogot/Godot — Sebastian corrected this 2026-10-04)",
      "mesh_current": "31,506 quad faces (~63K tris), textured, rigged",
      "service": "Tripo (studio.tripo3d.ai)",
      "steps_done": [
@@ -130,7 +130,7 @@
     "role": "Pure damage",
     "team": "Team A",
     "visual_identity": "Legendary demon samurai",
-    "visual_not": "Not a copy of the MLBB purple sea Thamuz skin that inspired it \u2014 changed enough to be its own design. No wings, no hanging banners, no digitigrade legs, no cracks/lava, no slime gloss.",
+    "visual_not": "Not a copy of the MLBB purple sea Thamuz skin that inspired it — changed enough to be its own design. No wings, no hanging banners, no digitigrade legs, no cracks/lava, no slime gloss.",
     "weapons": {
      "attachment": "Katanas parented to hand sockets; hands modeled in curled grip pose (C-shape)",
      "katana_image_prompt": "Katana game weapon asset, orthographic side view, flat lighting: blood-red blade, black handle with red diamond wrap, ornate gold guard, small white skull pommel. Clean stylized 3D, neutral gray background.",
@@ -143,7 +143,7 @@
    "updated": "2026-10-05"
   },
   {
-   "body": "Serious, threatening, unmistakably airborne flying leviathan. Celeste / light-blue body with white-cyan glow accents. Buildings float weightlessly around it so gravity control reads instantly in the silhouette. Not cute, not cartoonish \u2014 must read as a rival boss to the samurai.\n\nKit: manipulates gravity around BUILDINGS only \u2014 never directly on players (fairness rule, locked). Makes structures float or ignore gravity temporarily; terrain changes are neutral opportunities for both teams. Asymmetric kit, equal match effectiveness vs the samurai \u2014 no soul advantage means the duel still ties. Special abilities, timed ultimate, anti-rider responses, telegraphs and counters.",
+   "body": "Serious, threatening, unmistakably airborne flying leviathan. Celeste / light-blue body with white-cyan glow accents. Buildings float weightlessly around it so gravity control reads instantly in the silhouette. Not cute, not cartoonish — must read as a rival boss to the samurai.\n\nKit: manipulates gravity around BUILDINGS only — never directly on players (fairness rule, locked). Makes structures float or ignore gravity temporarily; terrain changes are neutral opportunities for both teams. Asymmetric kit, equal match effectiveness vs the samurai — no soul advantage means the duel still ties. Special abilities, timed ultimate, anti-rider responses, telegraphs and counters.",
    "category": "demons",
    "data": {
     "image_prompt": "Serious threatening celeste light-blue flying dragon leviathan, enormous wings, buildings floating weightlessly around it showing gravity manipulation, glowing white-cyan accents, game boss concept art, bold clean shapes, dramatic but readable silhouette",
@@ -172,7 +172,7 @@
    "updated": "2026-10-05"
   },
   {
-   "body": "Large moving and destructible buildings. Buildings are NOT statically floating \u2014 they become floating/weightless dynamically as the demons fight and use abilities (the leviathan manipulates gravity on buildings). The demon duel happens here.",
+   "body": "Large moving and destructible buildings. Buildings are NOT statically floating — they become floating/weightless dynamically as the demons fight and use abilities (the leviathan manipulates gravity on buildings). The demon duel happens here.",
    "category": "arena",
    "id": "zone-main-city",
    "status": "locked",
@@ -204,7 +204,7 @@
    "updated": "2026-10-05"
   },
   {
-   "body": "- Strong parry\n- Wall-running and heavy vertical movement\n- Demon climbing \u2014 players can climb demons and attack body regions\n- Structure damage only via specific Style abilities, never basic attacks\n- Large health pools \u2014 no instant deletions",
+   "body": "- Strong parry\n- Wall-running and heavy vertical movement\n- Demon climbing — players can climb demons and attack body regions\n- Structure damage only via specific Style abilities, never basic attacks\n- Large health pools — no instant deletions",
    "category": "mechanics",
    "id": "core-mechanics",
    "status": "locked",
@@ -220,7 +220,7 @@
    "updated": "2026-10-05"
   },
   {
-   "body": "- One for all (outnumbered): buff activates when one player fights two or more enemies with teammates absent.\n- Last person standing: temporary comeback window for the final player \u2014 activates only after they have taken enough damage. Not instant, not permanent, not a second life.\n\nNumbers, cooldowns, visuals, and interaction with demon death: open.",
+   "body": "- One for all (outnumbered): buff activates when one player fights two or more enemies with teammates absent.\n- Last person standing: temporary comeback window for the final player — activates only after they have taken enough damage. Not instant, not permanent, not a second life.\n\nNumbers, cooldowns, visuals, and interaction with demon death: open.",
    "category": "mechanics",
    "id": "comeback-systems",
    "status": "decided",
@@ -228,7 +228,7 @@
    "updated": "2026-10-05"
   },
   {
-   "body": "A Style is a complete fixed kit \u2014 picking it is the entire pre-match decision. Schema for a Style note:\n\n- name: the Style's name\n- fantasy: one-line combat fantasy (e.g. 'untouchable duelist who turns defense into offense')\n- equipment: manifested gear (weapons are part of the kit, not separate picks)\n- attacks: basic attack behavior\n- defense: parry/block/dodge identity within the strong-parry system\n- movement: how it wall-runs, climbs, repositions \u2014 what makes its traversal distinct\n- abilities: named abilities, including which one damages structures\n- vs-demons: how this Style fights or supports around the demons\n- status: open until Sebastian locks it",
+   "body": "A Style is a complete fixed kit — picking it is the entire pre-match decision. Schema for a Style note:\n\n- name: the Style's name\n- fantasy: one-line combat fantasy (e.g. 'untouchable duelist who turns defense into offense')\n- equipment: manifested gear (weapons are part of the kit, not separate picks)\n- attacks: basic attack behavior\n- defense: parry/block/dodge identity within the strong-parry system\n- movement: how it wall-runs, climbs, repositions — what makes its traversal distinct\n- abilities: named abilities, including which one damages structures\n- vs-demons: how this Style fights or supports around the demons\n- status: open until Sebastian locks it",
    "category": "styles",
    "id": "style-system",
    "status": "locked",
@@ -236,7 +236,7 @@
    "updated": "2026-10-05"
   },
   {
-   "body": "Service: Tripo (studio.tripo3d.ai). Samurai: image-to-3D mesh from the approved design sheet \u2192 31,506 quad faces (~63K tris) \u2192 texture pass \u2192 auto-rig with clean skeleton placement.\n\nNext: decimate 63K to 30K tris, export GLB, import into Horizon Studio.",
+   "body": "Service: Tripo (studio.tripo3d.ai). Samurai: image-to-3D mesh from the approved design sheet → 31,506 quad faces (~63K tris) → texture pass → auto-rig with clean skeleton placement.\n\nNext: decimate 63K to 30K tris, export GLB, import into Horizon Studio.",
    "category": "pipeline",
    "id": "tripo-pipeline",
    "status": "decided",
@@ -244,7 +244,7 @@
    "updated": "2026-10-05"
   },
   {
-   "body": "Target: Meta Horizon Studio. In gradual early access / waitlist as of 2026-10-05; Sebastian joined the creator program. Weekly launch watch runs Mondays.\n\nConfirmed: camera APIs + Monster Hunter-style camera example, custom model import, FBX animation import, AI mesh/texture generation (AssetGen 2.0, animatable characters announced).\n\nUnverified: action-combat netcode reliability, tick rate, melee lag compensation, destruction quality, climbing + animation workflow, physics quality, real-device combat feel, AI character generation output ceiling.\n\nPrincipal risks: destruction, climbing, animation workflow, physics quality, real-device combat feel. No confirmed standalone export \u2014 platform-locked.",
+   "body": "Target: Meta Horizon Studio. In gradual early access / waitlist as of 2026-10-05; Sebastian joined the creator program. Weekly launch watch runs Mondays.\n\nConfirmed: camera APIs + Monster Hunter-style camera example, custom model import, FBX animation import, AI mesh/texture generation (AssetGen 2.0, animatable characters announced).\n\nUnverified: action-combat netcode reliability, tick rate, melee lag compensation, destruction quality, climbing + animation workflow, physics quality, real-device combat feel, AI character generation output ceiling.\n\nPrincipal risks: destruction, climbing, animation workflow, physics quality, real-device combat feel. No confirmed standalone export — platform-locked.",
    "category": "pipeline",
    "id": "engine-status",
    "status": "decided",
@@ -252,7 +252,7 @@
    "updated": "2026-10-05"
   },
   {
-   "body": "Compose prompts FROM the structured fields in the notes \u2014 never from memory or imagination.\n\nImage prompt recipe: visual_identity + silhouette + palette (as material colors) + distinct features + visual_not (as negative prompt) + 'game character concept art, bold clean shapes, front view, neutral background'.\n\nDesign prompt recipe: role + kit attacks/mechanics + match-flow context. Never lock open questions in a prompt \u2014 check the open list first.",
+   "body": "Compose prompts FROM the structured fields in the notes — never from memory or imagination.\n\nImage prompt recipe: visual_identity + silhouette + palette (as material colors) + distinct features + visual_not (as negative prompt) + 'game character concept art, bold clean shapes, front view, neutral background'.\n\nDesign prompt recipe: role + kit attacks/mechanics + match-flow context. Never lock open questions in a prompt — check the open list first.",
    "category": "overview",
    "id": "prompting",
    "status": "decided",
@@ -265,7 +265,7 @@
    "title": "Base attributes",
    "status": "decided",
    "updated": "2026-10-05",
-   "body": "Base Health Pool: 2,500 HP.\n\nBase Attack Power: 100 ATK.\n\nStarting numbers for playtesting \u2014 ratios matter more than absolutes at this stage."
+   "body": "Base Health Pool: 2,500 HP.\n\nBase Attack Power: 100 ATK.\n\nStarting numbers for playtesting — ratios matter more than absolutes at this stage."
   },
   {
    "id": "energy-pool",
@@ -273,7 +273,7 @@
    "title": "Energy pool",
    "status": "decided",
    "updated": "2026-10-05",
-   "body": "Max Energy: 100 points, shared across all mobility actions.\n\n- Dodge: 30-35 points per dash \u2014 about 3 consecutive dodges before empty.\n- Sprint: ~5 points per second.\n- Full recharge: 3.0 seconds (0 to 100%).\n- Energy regenerates while walking \u2014 no forced standing idle during neutral play."
+   "body": "Max Energy: 100 points, shared across all mobility actions.\n\n- Dodge: 30-35 points per dash — about 3 consecutive dodges before empty.\n- Sprint: ~5 points per second.\n- Full recharge: 3.0 seconds (0 to 100%).\n- Energy regenerates while walking — no forced standing idle during neutral play."
   },
   {
    "id": "style-dual-katana",
@@ -281,7 +281,7 @@
    "title": "Dual Katana (Fire/Void)",
    "status": "decided",
    "updated": "2026-10-05",
-   "body": "The starter Style \u2014 every new player picks this kit free at creation. Working title; proper name open.\n\nFantasy: untouchable duelist who shreds defense with Void, then executes with Fire.\n\nEquipment: two manifested katanas \u2014 Katana F (Fire) and Katana V (Void). Weapons are part of the kit, not separate picks.\n\nAttacks: real-time stance swapping between the two katanas. Katana V is the neutral opener \u2014 gap closing, crowd control, defense shred. Katana F is the payoff \u2014 high raw damage plus Burn DoT stacks once the target's defense is open.\n\nStance swap rules: 1.0 second rapid swap window immediately after each transition for fluid combo extensions; 7.0 second swap lockdown once the window expires \u2014 no infinite stance spam.\n\nDefense: Katana V utility plus the universal strong-parry system.\n\nMovement: energy-based dodges and sprint (see energy pool); wall-running per core mechanics.\n\nAbilities: Burn DoT \u2014 Fire strikes stack burn damage over time, constant health pressure. Defense Shred \u2014 Void strikes strip armor/resistance, applying a vulnerability debuff.\n\nVs demons: open \u2014 not yet specified how this Style fights around the demons."
+   "body": "The starter Style — every new player picks this kit free at creation. Working title; proper name open.\n\nFantasy: untouchable duelist who shreds defense with Void, then executes with Fire.\n\nEquipment: two manifested katanas — Katana F (Fire) and Katana V (Void). Weapons are part of the kit, not separate picks.\n\nAttacks: real-time stance swapping between the two katanas. Katana V is the neutral opener — gap closing, crowd control, defense shred. Katana F is the payoff — high raw damage plus Burn DoT stacks once the target's defense is open.\n\nStance swap rules: 1.0 second rapid swap window immediately after each transition for fluid combo extensions; 7.0 second swap lockdown once the window expires — no infinite stance spam.\n\nDefense: Katana V utility plus the universal strong-parry system.\n\nMovement: energy-based dodges and sprint (see energy pool); wall-running per core mechanics.\n\nAbilities: Burn DoT — Fire strikes stack burn damage over time, constant health pressure. Defense Shred — Void strikes strip armor/resistance, applying a vulnerability debuff.\n\nVs demons: open — not yet specified how this Style fights around the demons."
   },
   {
    "id": "monetization-pillars",
@@ -289,7 +289,7 @@
    "title": "Monetization pillars",
    "status": "decided",
    "updated": "2026-10-05",
-   "body": "Core pillar: zero pay-to-win. No weapon or item bought with real currency ever grants a numerical stat advantage.\n\nCosmetics and skins are pure aesthetic \u2014 character, weapons, visual effects \u2014 with 0% stat boost."
+   "body": "Core pillar: zero pay-to-win. No weapon or item bought with real currency ever grants a numerical stat advantage.\n\nCosmetics and skins are pure aesthetic — character, weapons, visual effects — with 0% stat boost."
   },
   {
    "id": "style-unlocks",
@@ -297,7 +297,7 @@
    "title": "Style unlocks",
    "status": "decided",
    "updated": "2026-10-05",
-   "body": "Every new player picks 1 base Style free at creation.\n\nAdditional Styles unlock two ways: in-game playtime/currency earned from matches and challenges, or direct premium purchase (pay-to-skip \u2014 the kit is fixed, so no stat advantage).\n\nNew Styles launch with a temporary paid Early Access window before becoming earnable in-game."
+   "body": "Every new player picks 1 base Style free at creation.\n\nAdditional Styles unlock two ways: in-game playtime/currency earned from matches and challenges, or direct premium purchase (pay-to-skip — the kit is fixed, so no stat advantage).\n\nNew Styles launch with a temporary paid Early Access window before becoming earnable in-game."
   },
   {
    "id": "base-attributes",
@@ -312,7 +312,7 @@
    "category": "mechanics",
    "title": "Energy pool (mobility)",
    "status": "decided",
-   "body": "Max Energy: 100 points, shared across all mobility actions.\n\n- Dodge: 30-35 points per dash (~3 consecutive dodges max)\n- Sprint: ~5 points per second\n- Full recharge: 3.0 seconds (0 to 100%)\n- Energy regenerates while walking \u2014 no need to stand idle during neutral play.",
+   "body": "Max Energy: 100 points, shared across all mobility actions.\n\n- Dodge: 30-35 points per dash (~3 consecutive dodges max)\n- Sprint: ~5 points per second\n- Full recharge: 3.0 seconds (0 to 100%)\n- Energy regenerates while walking — no need to stand idle during neutral play.",
    "updated": "2026-10-06"
   },
   {
@@ -320,15 +320,15 @@
    "category": "styles",
    "title": "Dual katana stance kit (proposed starter Style)",
    "status": "decided",
-   "body": "The primary starter weapon kit: real-time stance swapping between two elementally distinct katanas. Recorded as a Style \u2014 one fixed kit, no weapon mixing.\n\nKatana F (Fire) \u2014 Offense & Execution: high raw damage and Burn DoT stacks (non-lethal and lethal) ticking over time; the damage payoff stance once defense is opened.\n\nKatana V (Void) \u2014 Defense Shred & Utility: hits strip armor/resistance (vulnerability debuff); crowd control and gap closing; the neutral opener. Once shredded, swap to Katana F to maximize output.\n\nStance swap rules: see base-attributes note (1.0s rapid window, 7.0s lockdown).\n\nStance Swap Rules (kit-specific, not universal):\n- Rapid Swap Window: 1.0 second immediately following a stance transition, allowing fluid combo extensions.\n- Swap Lockdown Cooldown: 7.0 seconds after the rapid swap window expires, preventing infinite stance spamming.\n\nIntentional swap mechanic (decided 2026-10-06): swapping stances does NOT auto-fire an ability. The swap ability only triggers if the outgoing katana's passive is stacked (e.g. at least 1 Burn stack while on Fire) - then the incoming katana throws its ability. Swapping without stacks fires nothing; instead it grants a small movement-speed buff. Purpose: swapping for positioning or combo setup never punishes the player with an unwanted ability lock (swap -> stuck in animation -> deleted). Open: whether the swap consumes the stacks (recommendation: yes, so cashing in is a real decision). Empty-swap speed buff: Sebastian proposed 30% for 3s - feedback (David): too hot, it becomes a strategy (free mobility vs dodge costing 30-35 energy) and undercuts the intentional-swap design. Recommendation: 10-15% for 2-3s, or 30% as a ~1s burst.",
+   "body": "The primary starter weapon kit: real-time stance swapping between two elementally distinct katanas. Recorded as a Style — one fixed kit, no weapon mixing.\n\nKatana F (Fire) — Offense & Execution: high raw damage and Burn DoT stacks (non-lethal and lethal) ticking over time; the damage payoff stance once defense is opened.\n\nKatana V (Void) — Defense Shred & Utility: hits strip armor/resistance (vulnerability debuff); crowd control and gap closing; the neutral opener. Once shredded, swap to Katana F to maximize output.\n\nStance swap rules: see base-attributes note (1.0s rapid window, 7.0s lockdown).\n\nStance Swap Rules (kit-specific, not universal):\n- Rapid Swap Window: 1.0 second immediately following a stance transition, allowing fluid combo extensions.\n- Swap Lockdown Cooldown: 7.0 seconds after the rapid swap window expires, preventing infinite stance spamming.\n\nIntentional swap mechanic (decided 2026-10-06): swapping stances does NOT auto-fire an ability. The swap ability only triggers if the outgoing katana's passive is stacked (e.g. at least 1 Burn stack while on Fire) - then the incoming katana throws its ability. Swapping without stacks fires nothing; instead it grants a small movement-speed buff. Purpose: swapping for positioning or combo setup never punishes the player with an unwanted ability lock (swap -> stuck in animation -> deleted). Open: whether the swap consumes the stacks (recommendation: yes, so cashing in is a real decision). Empty-swap speed buff: Sebastian proposed 30% for 3s - feedback (David): too hot, it becomes a strategy (free mobility vs dodge costing 30-35 energy) and undercuts the intentional-swap design. Recommendation: 10-15% for 2-3s, or 30% as a ~1s burst.",
    "updated": "2026-10-06"
   },
   {
    "id": "armor-modules",
    "category": "mechanics",
-   "title": "Armor modules (CONFLICT \u2014 needs Sebastian's call)",
+   "title": "Armor modules (CONFLICT — needs Sebastian's call)",
    "status": "open",
-   "body": "Proposal: exactly 1 Active Armor Module equipped per match. Modules are consumable \u2014 wear down and expire after a set number of matches (currency sink).\n\n- Vitality Core: flat max-HP bonus beyond 2,500 + slow continuous regen (active).\n- Purifier Node: instantly cleanses all debuffs (hard counter to Burn stacks / Defense Shred).\n\nCONFLICTS WITH LOCKED PILLARS: (1) 'No builds, no loadouts' \u2014 picking 1 module per match is a loadout choice. (2) 'No persistence / no economy between matches' \u2014 consumables expiring across matches implies cross-match persistence. Resolve: drop modules, fold them into Styles as fixed kit parts, or revise the pillars.",
+   "body": "Proposal: exactly 1 Active Armor Module equipped per match. Modules are consumable — wear down and expire after a set number of matches (currency sink).\n\n- Vitality Core: flat max-HP bonus beyond 2,500 + slow continuous regen (active).\n- Purifier Node: instantly cleanses all debuffs (hard counter to Burn stacks / Defense Shred).\n\nCONFLICTS WITH LOCKED PILLARS: (1) 'No builds, no loadouts' — picking 1 module per match is a loadout choice. (2) 'No persistence / no economy between matches' — consumables expiring across matches implies cross-match persistence. Resolve: drop modules, fold them into Styles as fixed kit parts, or revise the pillars.",
    "updated": "2026-10-06"
   },
   {
@@ -352,7 +352,7 @@
    "category": "economy",
    "title": "Currency sinks",
    "status": "decided",
-   "body": "- Consumable armor modules (if the module system is approved \u2014 currently open/conflicted)\n- Cosmetics: character, weapon stance, and visual effect skins",
+   "body": "- Consumable armor modules (if the module system is approved — currently open/conflicted)\n- Cosmetics: character, weapon stance, and visual effect skins",
    "updated": "2026-10-06"
   },
   {
@@ -376,7 +376,7 @@
    "category": "mechanics",
    "title": "Match intro: demon descent",
    "status": "decided",
-   "body": "No ground spawns. All players start standing on their team's demon. The demons descend into the main city together and the players wall-run down nearby buildings into the fight. This is the opening spectacle of every match. Intro is ~10 seconds, no skip needed. Reference pose: player character standing triumphant atop the demon during descent (see assets/refs/descent-hero-pose.jpg) \u2014 this is the poster's hero shot.",
+   "body": "No ground spawns. All players start standing on their team's demon. The demons descend into the main city together and the players wall-run down nearby buildings into the fight. This is the opening spectacle of every match. Intro is ~10 seconds, no skip needed. Reference pose: player character standing triumphant atop the demon during descent (see assets/refs/descent-hero-pose.jpg) — this is the poster's hero shot.",
    "updated": "2026-10-07"
   },
   {
@@ -384,7 +384,7 @@
    "category": "mechanics",
    "title": "Respawns: sky drop",
    "status": "decided",
-   "body": "While your demon stands, dead teammates respawn after a delay (delay length: open). Respawns drop from the sky in a protected no-fall-damage state, landing back into the fight. The drop is STEERABLE \u2014 players choose their landing spot, turning respawn into a small tactical decision (wall-run straight back in on landing near buildings).",
+   "body": "While your demon stands, dead teammates respawn after a delay (delay length: open). Respawns drop from the sky in a protected no-fall-damage state, landing back into the fight. The drop is STEERABLE — players choose their landing spot, turning respawn into a small tactical decision (wall-run straight back in on landing near buildings).",
    "updated": "2026-10-07"
   },
   {
@@ -392,8 +392,24 @@
    "category": "mechanics",
    "title": "Adaptive metal soundtrack",
    "status": "decided",
-   "body": "Metal soundtrack with adaptive intensity layers, mapped to the locked match flow:\n- Skirmish: sparse and tense (clean guitars, heartbeat drums) \u2014 not loud, just present.\n- Demon duel tipping (soul buffs landing): layers build \u2014 drums and rhythm guitars fade in.\n- Demon fall: the drop \u2014 full metal.\n- The hunt: maximum intensity to the final wipe.\n\nDesign rule: intensity comes from LAYER DENSITY, not volume. Adding instruments as the match gets epic, never just turning it up \u2014 avoids ear fatigue, critical on phone speakers.\nEngine note: Horizon Engine supports FMOD, the industry-standard middleware for adaptive music \u2014 the tech for this is native to the platform.\nMusic is composed/produced in separate loopable stems per layer so the game can crossfade between them by match state.",
+   "body": "Metal soundtrack with adaptive intensity layers, mapped to the locked match flow:\n- Skirmish: sparse and tense (clean guitars, heartbeat drums) — not loud, just present.\n- Demon duel tipping (soul buffs landing): layers build — drums and rhythm guitars fade in.\n- Demon fall: the drop — full metal.\n- The hunt: maximum intensity to the final wipe.\n\nDesign rule: intensity comes from LAYER DENSITY, not volume. Adding instruments as the match gets epic, never just turning it up — avoids ear fatigue, critical on phone speakers.\nEngine note: Horizon Engine supports FMOD, the industry-standard middleware for adaptive music — the tech for this is native to the platform.\nMusic is composed/produced in separate loopable stems per layer so the game can crossfade between them by match state.",
    "updated": "2026-10-07"
+  },
+  {
+   "id": "style-angel",
+   "category": "styles",
+   "title": "Angel Style (Ultra Instinct-inspired)",
+   "status": "decided",
+   "updated": "2026-10-07",
+   "body": "Name: open — Sebastian hasn't named this Style. Working reference: the angel Style, inspired by Ultra Instinct Goku.\n\nFantasy: the body dodges on its own — untouchable calm that flips into raw ranged wrath.\n\nEquipment: bare hands in base form. Ranged attacks in agent form (ranged form not specified).\n\nAttacks: base form fights bare-handed as a tank — no crazy damage. Agent form switches to ranged attacks with raw damage.\n\nDefense: Angel Aura — tap a slot to activate. While active: 80% lower energy consumption; dodge becomes angelic evasion with a 7m maximum dodge distance (evades a 6m ability, cannot evade an 8m ability); cannot regenerate energy while in angel aura. Lasts 3 seconds. 25-second cooldown after deactivation. In agent form defense is low.\n\nMovement: free movement during angel aura. Traversal otherwise not specified.\n\nAbilities: 4-button kit. One button: Angel Aura (tap to activate). 4th button: transform into agent form — requires angel aura to be on and full energy; abilities change on transform. Buttons 1-2: not specified.\n\nVs demons: not specified.\n\nNot a starter Style — unlockable, harder to obtain. Sebastian's rationale: more complex, more fun, bigger prestige, so a hard unlock path (or premium) fits."
+  },
+  {
+   "id": "economy-angel-unlock",
+   "category": "economy",
+   "title": "Angel Style unlock model",
+   "status": "decided",
+   "updated": "2026-10-07",
+   "body": "Unlock model for the angel Style, as specified by Sebastian:\n\n- In-game currency is earned depending on match performance.\n- Premium currency is purchasable.\n- A battle pass (DBZ MOBA-style) contains the Style plus a skin.\n- Around 10-15 days after the battle pass ends, the Style becomes purchasable with normal (earned) currency.\n\nSebastian's position: the premium purchase is pay-to-skip-grind, not pay-to-win."
   }
  ]
 }
