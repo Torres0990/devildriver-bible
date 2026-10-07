@@ -386,6 +386,14 @@
    "status": "decided",
    "body": "While your demon stands, dead teammates respawn after a delay (delay length: open). Respawns drop from the sky in a protected no-fall-damage state, landing back into the fight. The drop is STEERABLE \u2014 players choose their landing spot, turning respawn into a small tactical decision (wall-run straight back in on landing near buildings).",
    "updated": "2026-10-07"
+  },
+  {
+   "id": "adaptive-music",
+   "category": "mechanics",
+   "title": "Adaptive metal soundtrack",
+   "status": "decided",
+   "body": "Metal soundtrack with adaptive intensity layers, mapped to the locked match flow:\n- Skirmish: sparse and tense (clean guitars, heartbeat drums) \u2014 not loud, just present.\n- Demon duel tipping (soul buffs landing): layers build \u2014 drums and rhythm guitars fade in.\n- Demon fall: the drop \u2014 full metal.\n- The hunt: maximum intensity to the final wipe.\n\nDesign rule: intensity comes from LAYER DENSITY, not volume. Adding instruments as the match gets epic, never just turning it up \u2014 avoids ear fatigue, critical on phone speakers.\nEngine note: Horizon Engine supports FMOD, the industry-standard middleware for adaptive music \u2014 the tech for this is native to the platform.\nMusic is composed/produced in separate loopable stems per layer so the game can crossfade between them by match state.",
+   "updated": "2026-10-07"
   }
  ]
 }
