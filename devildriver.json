@@ -83,34 +83,29 @@
    "data": {
     "assets": {
      "body_budget_tris": 30000,
-     "both_demons_tris": 76000,
+     "both_demons_tris": 60000,
      "frame_budget_note": "Under 15% of a Quest-class frame budget (~500K-1M tris)",
-     "hidden_ult_arms": "Reserve ~2K tris inside the 30K body budget for the hidden ultimate arm pair",
-     "katana_budget_tris_each": 4000,
-     "katana_count_base_form": 2,
-     "katana_count_ultimate": 4,
-     "per_demon_armed_tris": 38000
+     "per_demon_tris": 30000
     },
     "crystal": {
      "note": "Separate small asset so it can pulse with demon health / ult timer",
      "separate": true
     },
-    "image_prompt": "Legendary demon samurai, tall upright humanoid, faceless smooth black void head with large horns, cosmic black armor with blood-red glow accents and gold trim, spiked layered shoulder pauldrons proportioned to body, glowing red crystal centered on chest, two arms with hands in curled grip pose, standing straight, game character concept art, bold clean shapes, front view, neutral background",
+    "image_prompt": "Legendary demon samurai, tall upright humanoid, faceless smooth black void head with large horns, cosmic black armor with blood-red glow accents and gold trim, spiked layered shoulder pauldrons proportioned to body, glowing red crystal centered on chest, two arms with open hands, standing straight, game character concept art, bold clean shapes, front view, neutral background",
     "kit": {
-     "attacks": "Slash sequences that hit the dragon, players, structures, and riders within a radius.",
+     "attacks": "Punch/kick strike sequences that hit the opposing demon, players, structures, and riders within a radius.",
      "special_abilities": true,
      "telegraphs_and_counters": true,
      "timed_ultimate": {
-      "description": "Second arm pair manifests from the torso; four katanas, full slash storm. The manifestation IS the telegraph.",
-      "name": "Slash storm",
-      "status": "decided"
+      "description": "Stale four-arm katana storm removed 2026-10-07. Brawler ultimate not yet designed - no katanas, no extra arms.",
+      "name": "TBD (post brawler pivot)",
+      "status": "open"
      }
     },
     "palette": [
      "cosmic black armor",
-     "blood-red blades and glow",
-     "gold trim and spike tips",
-     "white skull pommel on katanas"
+     "blood-red glow",
+     "gold trim and spike tips"
     ],
     "pipeline": {
      "export_target": "Horizon Studio (NOT Xogot/Godot — Sebastian corrected this 2026-10-04)",
@@ -130,12 +125,7 @@
     "role": "Pure damage",
     "team": "Team A",
     "visual_identity": "Legendary demon samurai",
-    "visual_not": "Not a copy of the MLBB purple sea Thamuz skin that inspired it — changed enough to be its own design. No wings, no hanging banners, no digitigrade legs, no cracks/lava, no slime gloss.",
-    "weapons": {
-     "attachment": "Katanas parented to hand sockets; hands modeled in curled grip pose (C-shape)",
-     "katana_image_prompt": "Katana game weapon asset, orthographic side view, flat lighting: blood-red blade, black handle with red diamond wrap, ornate gold guard, small white skull pommel. Clean stylized 3D, neutral gray background.",
-     "separate": true
-    }
+    "visual_not": "Not a copy of the MLBB purple sea Thamuz skin that inspired it — changed enough to be its own design. No wings, no hanging banners, no digitigrade legs, no cracks/lava, no slime gloss."
    },
    "id": "demon-samurai",
    "status": "decided",
