@@ -408,6 +408,14 @@
       "status": "decided",
       "updated": "2026-10-08",
       "body": "Name: open — Sebastian hasn't named this Style. Working reference: single sword fighter.\n\nFantasy: the honest duelist. Balance between defense and offense. No tricks — the best fundamental tools in the roster.\n\nEquipment: one sword. Fixed kit, no swapping.\n\nAbility 1: swipe in area.\n\nAbility 2: heavy slashes that break guard.\n\nAbility 3: enchantment — the sword gets bigger, hits area damage, all swipes count as heavy. Purges all debuffs on activation (Sebastian chose purge over crowd-control immunity while enchanted).\n\nMight: each damage dealt puts a stack on that enemy, increasing your damage towards them by 5% per stack, 3 stacks max.\n\nOpen (proposed, not decided): enchantment tradeoff (slower swings while enchanted); Might stacks decay when disengaging; marked enemy sees the stacks; whether Void shred affects the parry window (recommendation: never — the guard is sacred)."
+    },
+    {
+      "id": "style-ranged",
+      "category": "styles",
+      "title": "Ranged fighter (double pistols + rifle)",
+      "status": "decided",
+      "updated": "2026-10-08",
+      "body": "Name: open — Sebastian hasn't named this Style. Working reference: ranged fighter.\n\nFantasy: mark-and-detonate zoner. Stacks the target with pistols, cashes in with the rifle.\n\nEquipment: double pistols and a rifle — one fixed kit, no swapping. Basic attacks are pure pistol.\n\nPassive — funny bomb: each 3 hits puts a stack of funny bomb on the enemy, up to 5 stacks. Stacks can stay on the enemy up to 30 seconds if you haven't hit them.\n\nSlot 1: fires an aggressive amount of bullets with the double pistols, up to 16 hits.\n\nSlot 2: dodge to the back; if an enemy was in front of you, you trap them with an electric field — their defense is lowered by 10% and they are trapped for 1.2 seconds.\n\nSlot 3: charge the rifle — up to 3 hits on the locked enemy. The rifle gets an 8% final damage bonus for each funny bomb stack the enemy had on; the stacks disappear after the first hit is landed.\n\nOpen: whether the slot 2 trap roots or fully stuns; whether hitting the enemy refreshes the 30-second stack timer (Sebastian's wording implies it does)."
     }
   ]
 }
